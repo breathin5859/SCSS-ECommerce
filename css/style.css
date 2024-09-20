@@ -1011,6 +1011,13 @@
       margin-right: 0.4rem;
     }
   }
+  .header__left a {
+    display: flex;
+    align-items: center;
+  }
+  .header__left a img {
+    width: 100%;
+  }
   .header__left .logo {
     order: 2;
   }
