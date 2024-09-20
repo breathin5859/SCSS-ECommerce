@@ -1,0 +1,21 @@
+@use "../abstracts/" as *;
+
+@layer Components.Badge {
+  .badge {
+    display: inline-flex;
+
+    padding: rem(4) rem(14);
+    border-radius: rem(4);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 16px;
+    &.white {
+      background: $white;
+      color: $black12;
+    }
+    &.green {
+      background: $green;
+      color: $neutral-01-100;
+    }
+  }
+}

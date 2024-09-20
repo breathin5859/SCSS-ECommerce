@@ -1,0 +1,25 @@
+@use "../abstracts/" as *;
+
+@layer Components.Utility {
+  .utility {
+    display: flex;
+    @include mobile {
+      .ico3,
+      .ico4 {
+        display: none;
+      }
+    }
+    li {
+      > * {
+        padding: rem(8);
+      }
+    }
+
+    .footer & {
+      gap: rem(16);
+      @include mobile {
+        order: 1;
+      }
+    }
+  }
+}

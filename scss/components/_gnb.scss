@@ -1,0 +1,46 @@
+@use "../abstracts/" as *;
+
+@layer Components.Gnb {
+  .gnb {
+    > ul {
+      display: flex;
+      gap: rem(20);
+      > li {
+        > a {
+          display: inline-flex;
+          align-items: center;
+          gap: rem(2);
+          padding-inline: rem(10);
+          color: $neutral-07-100;
+          font-weight: 500;
+          line-height: rem(24);
+        }
+
+        &.--active {
+          > a {
+            color: $neutral-07-100;
+          }
+        }
+      }
+    }
+
+    .header & {
+      @include mobile {
+        display: none;
+      }
+    }
+
+    .footer & {
+      @include mobile {
+        ul {
+          display: grid;
+        }
+      }
+      li {
+        > a {
+          color: $white;
+        }
+      }
+    }
+  }
+}

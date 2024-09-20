@@ -1,0 +1,13 @@
+@use "../abstracts/" as *;
+
+@layer Components.Logo {
+  .logo {
+    width: fit-content;
+    // height: ;
+    > img {
+      width: 100%;
+      height: fit-content;
+      margin-bottom: rem(-8);
+    }
+  }
+}

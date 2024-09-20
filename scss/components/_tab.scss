@@ -1,0 +1,79 @@
+@use "../abstracts/" as *;
+
+@layer Components.Tab {
+  .tab-type1 {
+    display: flex;
+    gap: rem(4);
+
+    input {
+      @include a11y-hidden;
+      &:checked + label {
+        @for $index from 1 through 4 {
+          &:nth-of-type(#{$index}) {
+            @include background("tab_view#{$index}_on.svg");
+          }
+        }
+      }
+    }
+    label {
+      width: rem(24);
+      height: rem(24);
+
+      @for $index from 1 through 4 {
+        &:nth-of-type(#{$index}) {
+          @include background("tab_view#{$index}_off.svg");
+        }
+      }
+    }
+  }
+  //progress tab
+  .tab-type2 {
+    > ul {
+      display: flex;
+      gap: rem(32);
+      li {
+        display: flex;
+        align-items: center;
+        padding-bottom: rem(26);
+        width: rem(256);
+        font-weight: 600;
+        border-bottom: 2px solid $green45;
+        color: $green45;
+
+        &::before {
+          content: "";
+          @include background("ico_check_wh.svg", center);
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: rem(17);
+          width: rem(40);
+          height: rem(40);
+          background-color: $green45;
+          border-radius: rem(1000);
+          background-size: rem(24) auto;
+          background-color: $green45;
+          color: $white;
+        }
+        &.--active {
+          border-color: $gray23;
+          color: $gray23;
+          &::before {
+            content: attr(data-text);
+            background-image: none;
+            background-color: $gray23;
+          }
+          & + li {
+            color: $grayb1;
+            &::before {
+              content: attr(data-text);
+              background-image: none;
+              background-color: $grayb1;
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+}

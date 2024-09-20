@@ -1,0 +1,52 @@
+@use "../abstracts/" as *;
+
+@layer Components.Grid {
+  .grid-type1 {
+    display: grid;
+    grid-template-columns: repeat(2, rem(548));
+    grid-template-rows: repeat(2, rem(319));
+    gap: rem(24);
+    @include mobile {
+      grid-template-columns: rem(311);
+      grid-template-rows: repeat(4, rem(180));
+    }
+
+    li {
+      position: relative;
+      > a {
+        display: block;
+        font-size: rem(14);
+        font-weight: 500;
+        line-height: rem(24);
+        > img {
+          width: 100%;
+        }
+      }
+      > div {
+        position: absolute;
+        inset: auto auto rem(48) rem(48);
+        display: grid;
+        gap: rem(12);
+        @include mobile {
+          inset: auto auto rem(32) rem(32);
+          gap: rem(8);
+        }
+        b {
+          @include mobile {
+            font-size: rem(28);
+          }
+        }
+        > a {
+          width: fit-content;
+        }
+      }
+
+      &:first-child {
+        grid-row: 1 / -1;
+        @include mobile {
+          grid-row: 1 / 3;
+        }
+      }
+    }
+  }
+}

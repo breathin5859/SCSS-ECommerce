@@ -1,0 +1,30 @@
+@use "../abstracts/" as *;
+
+@layer Components.Visual {
+  .visual {
+    @include background("@visual.png");
+    color: $black12;
+    height: rem(820);
+
+    @include mobile {
+      @include background("@visual_mobile .png");
+
+      text-align: center;
+    }
+
+    &__title {
+      font-size: rem(80);
+      font-weight: 500;
+      line-height: rem(84);
+      letter-spacing: rem(-3);
+    }
+    &__text {
+      margin-block: rem(8) rem(28);
+      font-size: rem(20);
+      line-height: rem(32);
+      @include mobile {
+        margin-block: rem(8) rem(16);
+      }
+    }
+  }
+}

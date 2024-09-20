@@ -1,0 +1,58 @@
+@use "../abstracts/" as *;
+
+@layer Layout.Footer {
+  .footer {
+    background-color: $neutral-07-100;
+    color: $white;
+    &__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-block: rem(80) rem(49);
+      @include mobile {
+        display: grid;
+        justify-content: center;
+        gap: rem(40);
+        text-align: center;
+        padding-block: rem(48) rem(40);
+      }
+    }
+
+    &__bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-block: rem(8) rem(40);
+      border-top: rem(1) solid $neutral-04-100;
+      @include mobile {
+        display: grid;
+        justify-content: center;
+        justify-items: center;
+        gap: rem(32);
+        padding-block: rem(24) rem(72);
+        .footer__copy {
+          order: 2;
+        }
+      }
+
+      &__left {
+        display: flex;
+        gap: rem(28);
+        @include mobile {
+          display: grid;
+          justify-items: center;
+          order: 2;
+        }
+
+        > ul {
+          display: flex;
+          gap: rem(28);
+          @include mobile {
+            order: 1;
+            width: fit-content;
+          }
+        }
+      }
+    }
+  }
+}

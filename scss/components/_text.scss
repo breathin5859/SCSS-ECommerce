@@ -1,0 +1,26 @@
+@use "../abstracts/" as *;
+
+@layer Components.Text {
+  .text-type1 {
+    color: $black;
+    font-size: rem(40);
+    font-weight: 500;
+    line-height: rem(44);
+    letter-spacing: rem(-0.4);
+  }
+  .text-type2 {
+    color: $black12;
+    font-size: rem(34);
+    font-weight: 500;
+    line-height: rem(38);
+    letter-spacing: rem(-0.6);
+  }
+  .text-type3 {
+  }
+
+  .ft {
+    &-blue {
+      color: #377dff;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@use "../abstracts/" as *;
+
+@layer Layout.Header {
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(0deg, rgba(255, 171, 0, 0.64) 0%, rgba(255, 171, 0, 0.64) 100%), #fff;
+    @include mobile {
+      padding: rem(16) rem(32);
+    }
+
+    &__left {
+      display: flex;
+      align-items: center;
+      @include mobile {
+        .logo {
+          width: rem(70);
+        }
+        .only-mobile {
+          &::before {
+            display: flex;
+            margin-right: rem(4);
+          }
+        }
+      }
+      .logo {
+        order: 2;
+      }
+    }
+    &__banner {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      background-color: $neutral-07-100;
+      > a {
+        anchor-name: --banner;
+        display: inline-flex;
+        gap: rem(12);
+        padding-block: rem(9);
+        color: #fff;
+        font-weight: 600;
+        line-height: 22px;
+        text-align: center;
+        span {
+          gap: rem(4);
+          color: $yellow;
+          line-height: rem(17);
+          @include mobile {
+            display: none;
+          }
+        }
+      }
+      > .close {
+        position: absolute;
+        inset: 50% rem(16) auto auto;
+        translate: 0 -50%;
+        @include mobile {
+          inset: 50% auto auto anchor(--banner right);
+          margin-left: rem(22);
+          &::before {
+            @include background("ico_close_wh.svg");
+          }
+        }
+      }
+    }
+  }
+}
